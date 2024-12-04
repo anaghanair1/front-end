@@ -39,7 +39,8 @@ const EventItem: React.FC<{ event: Event }> = ({ event }) => {
 };
 
 const Events: React.FC = () => {
-  const [events, setEvents] = useState<Event[]>([]);
+  const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]); // Renamed from `events`.
+  const [pastEvents, setPastEvents] = useState<Event[]>([]); // Added for past events.
 
   useEffect(() => {
     const fetchEvents = async () => {
@@ -47,8 +48,13 @@ const Events: React.FC = () => {
         const response = await fetch('/api/event_fetcher');
         if (response.ok) {
           const fetchedEvents: Event[] = await response.json();
-          const upcomingEvents = fetchedEvents.filter(event => event.start_time > Date.now() / 1000);
-          setEvents(upcomingEvents);
+          const now = Date.now() / 1000; // Added to get current timestamp.
+          const upcoming = fetchedEvents.filter(event => event.start_time > now); // Filtering events into upcoming and past. Renamed to upcoming.
+          const past = fetchedEvents.filter(event => event.end_time <= now); // Past events.
+
+          setUpcomingEvents(upcoming); // Directly updating.
+          setPastEvents(past); 
+          // Removed the entire line here that filters upcomingEvents as it was just doing the same filter again.
         }
       } catch (error) {
         console.error('Failed to fetch events:', error);
@@ -62,6 +68,7 @@ const Events: React.FC = () => {
     <Layout>
       <div className="min-h-screen w-full bg-gradient-to-br from-purple-900 via-indigo-800 to-blue-900">
         <div className="pt-24 pb-16">
+          {/* Upcoming Events */}
           <FadeInSection>
             <h1 className="text-white text-center font-mono font-extrabold mb-12 w-full px-4" style={{
               fontSize: 'clamp(2.5rem, 8vw, 5rem)',
@@ -71,8 +78,8 @@ const Events: React.FC = () => {
             </h1>
           </FadeInSection>
 
-          {events.length > 0 ? (
-            events.map((event, index) => (
+          {upcomingEvents.length > 0 ? ( // Renamed from 'events'.
+            upcomingEvents.map((event, index) => (
               <FadeInSection key={event.id} delay={index * 200}>
                 <EventItem event={event} />
               </FadeInSection>
@@ -81,6 +88,28 @@ const Events: React.FC = () => {
             <FadeInSection>
               <h3 className="text-white text-center text-xl sm:text-3xl font-bold font-mono">No upcoming events... Check back soon!</h3>
             </FadeInSection>
+          )}
+
+          {/* Past Events*/}
+          <FadeInSection>
+            <h1 className="text-white text-center font-mono font-extrabold mt-16 mb-12 w-full px-4" style={{
+              fontSize: 'clamp(2.5rem, 8vw, 5rem)',
+              lineHeight: '1.1'
+            }}>
+              Past Events
+            </h1>
+          </FadeInSection>
+
+          {pastEvents.length > 0 ? ( // Render past events
+            pastEvents.map((event, index) => (
+              <FadeInSection key={event.id} delay={index * 200}>
+                <EventItem event={event} />
+              </FadeInSection>
+            ))
+          ) : (
+          <FadeInSection>
+            <h3 className="text-white text-center text-xl sm:text-3xl font-bold font-mono">No past events yet!</h3>
+          </FadeInSection>
           )}
         </div>
       </div>

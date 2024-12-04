@@ -13,6 +13,9 @@ const SocialButtons: React.FC = () => {
       <Link href="https://www.instagram.com/buaisociety?igsh=ZG9pd3FhOXhzNnQy" aria-label="Instagram" className="transition-transform duration-300 hover:scale-110">
         <img src="/images/instagram-alt.svg" alt="Instagram" className="w-8 h-8" />
       </Link>
+      <Link href="https://youtube.com/@buaisociety?si=dqrNYZx3crccrznk" className="transition-transform duration-300 hover:scale-110">
+        <img src="/images/youtube-alt.svg" alt="YouTube" className="w-8 h-8" />
+      </Link>
     </div>
   )
 }
