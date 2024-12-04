@@ -17,8 +17,8 @@ const teamData: TeamCategory[] = [
   {
     title: 'Presidents',
     members: [
-      { name: 'Alan Nguyen', photo: '/images/alan-pic.png', linkedin: 'https://linkedin.com/in/janesmith' },
-      { name: 'Collin Barber', photo: '/images/collin-pic.png', linkedin: 'https://linkedin.com/in/janesmith' },
+      { name: 'Alan Nguyen', photo: '/images/alan-pic.png', linkedin: 'https://linkedin.com/in/nguyendesu' },
+      { name: 'Collin Barber', photo: '/images/collin-pic.png', linkedin: 'https://linkedin.com/in/collin-barber-14489524a' },
     ],
   },
   {
@@ -27,7 +27,7 @@ const teamData: TeamCategory[] = [
       { name: 'Anagha Nair', photo: '/images/anagha-pic.png', linkedin: 'https://linkedin.com/in/anagha-nair-152794200' },
       { name: 'Baiwen Zheng', photo: '/images/baiwen-pic.png', linkedin: 'https://linkedin.com/in/baiwenzheng' },
       { name: 'Danai Cabero', photo: '/images/danai-pic.png', linkedin: 'https://linkedin.com/in/danaicabero' },
-      { name: 'Denali Schlesinger', photo: '/images/denali-pic2.jpeg', linkedin: 'https://linkedin.com/in/denalischlesinger' },
+      { name: 'Denali Schlesinger', photo: '/images/denali-pic.jpeg', linkedin: 'https://linkedin.com/in/denalischlesinger' },
       { name: 'Irene Deng', photo: '/images/irene-pic.png', linkedin: 'https://linkedin.com/in/irene-d-38551a219' },
       { name: 'Sabine Ambrosi', photo: '/images/sabine-pic.png', linkedin: 'https://linkedin.com/in/sabine-ambrosi' },
       { name: 'Varsha Athreya', photo: '/images/varsha-pic.png', linkedin: 'https://linkedin.com/in/varsha-athreya' },
