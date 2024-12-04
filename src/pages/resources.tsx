@@ -48,7 +48,8 @@ const resources: ResourceItem[] = [
       {
         title: 'Code',
         links: [
-          { name: 'Neural Net Basics', url: 'https://github.com/nn/basics' },
+            { name: 'Neural networks from scratch', url: 'https://github.com/buaiml/NeuralNetworksFromScratch' },
+            { name: 'Snake', url: 'https://github.com/buaiml/Snake4Neat' },
         ],
       },
       {
