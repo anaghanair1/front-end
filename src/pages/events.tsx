@@ -54,7 +54,7 @@ const Events: React.FC = () => {
 
           setUpcomingEvents(upcoming); // Directly updating.
           setPastEvents(past); 
-          // Removed the entire line here that filters upcomingEvents as it was just doing the same filter again.
+          // Removed the entire line here that filters upcomingEvents cause it was just doing the same filter again.
         }
       } catch (error) {
         console.error('Failed to fetch events:', error);

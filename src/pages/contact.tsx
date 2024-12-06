@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Layout from "@/components/Layout"; // Adjust the import path for your project
+import Layout from "@/components/Layout"; 
 
 const ContactUs: React.FC = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +16,7 @@ const ContactUs: React.FC = () => {
   };
 
   return (
-    <Layout> {/* Wrap the page with Layout */}
+    <Layout> 
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-indigo-800 to-blue-900 flex flex-col items-center justify-center px-4">
         <div className="max-w-md w-full bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg shadow-lg rounded-lg p-6">
           <h1 className="text-3xl font-bold text-white text-center mb-6 font-mono">
@@ -63,7 +63,7 @@ const ContactUs: React.FC = () => {
             <p className="text-white mb-2 font-mono">Join our community:</p>
             <div className="flex justify-center space-x-4">
               <a
-                href="https://discord.gg/your-discord-link"
+                href="https://discord.gg/TyubkeGSXj"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:underline font-mono"
@@ -71,7 +71,7 @@ const ContactUs: React.FC = () => {
                 Discord
               </a>
               <a
-                href="https://instagram.com/your-instagram-link"
+                href="https://www.instagram.com/buaisociety?igsh=ZG9pd3FhOXhzNnQy" aria-label="Instagram"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:underline font-mono"
